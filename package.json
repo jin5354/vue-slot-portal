@@ -1,7 +1,7 @@
 {
-  "name": "vue-slot-distributor",
+  "name": "vue-slot-portal",
   "version": "0.1.0",
-  "description": "Vue plugin for slot across-component portal.",
+  "description": "Vue plugin for slot across-component distribution.",
   "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.config.dev.js",
