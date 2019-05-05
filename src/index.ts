@@ -13,13 +13,15 @@ const store = new Vue({
   }
 })
 
+const slotReceiverCom = SlotReceiver(store)
+
 const install = (Vue, slotRoutes = {}) => {
   store.$data.slotRoutes = slotRoutes
-  const slotReceiverCom = SlotReceiver(store)
   Vue.component('SlotReceiver', slotReceiverCom)
 }
 
 export default {
   install,
-  SlotInjector: SlotInjector(store)
+  SlotInjector: SlotInjector(store),
+  slotReceiverCom
 }
