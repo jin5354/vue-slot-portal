@@ -23,5 +23,5 @@ const install = (Vue, slotRoutes = {}) => {
 export default {
   install,
   SlotInjector: SlotInjector(store),
-  slotReceiverCom
+  SlotReceiver: slotReceiverCom
 }
