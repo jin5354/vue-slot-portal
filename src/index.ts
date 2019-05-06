@@ -1,10 +1,14 @@
-import Vue from 'vue'
-import SlotReceiver from './SlotReceiver'
-import SlotInjector from './SlotInjector'
+import Vue, {ComponentOptions, PropOptions} from 'vue'
+import createSlotReceiver from './createSlotReceiver'
+import createSlotInjector from './createSlotInjector'
+
+export interface slotRoutes {
+  [slotName: string]: string
+}
 
 // use vue instance to store slotRoute infos
 // for observable
-const store = new Vue({
+const store: Vue = new Vue({
   data() {
     return {
       slotRoutes: {},
@@ -13,15 +17,16 @@ const store = new Vue({
   }
 })
 
-const slotReceiverCom = SlotReceiver(store)
+const SlotReceiver: ComponentOptions<Vue> = createSlotReceiver(store)
+const SlotInjector: ComponentOptions<Vue> = createSlotInjector(store)
 
-const install = (Vue, slotRoutes = {}) => {
+const install = (Vue, slotRoutes: slotRoutes = {}): void => {
   store.$data.slotRoutes = slotRoutes
-  Vue.component('SlotReceiver', slotReceiverCom)
+  Vue.component('SlotReceiver', SlotReceiver)
 }
 
 export default {
   install,
-  SlotInjector: SlotInjector(store),
-  SlotReceiver: slotReceiverCom
+  SlotInjector,
+  SlotReceiver
 }

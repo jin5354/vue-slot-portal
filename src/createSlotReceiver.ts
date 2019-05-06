@@ -1,6 +1,13 @@
-import Vue from 'vue'
+import Vue, {ComponentOptions} from 'vue'
 
-export default function SlotReceiver(store) {
+/**
+ * createSlotReceiver
+ *
+ * @export
+ * @param {Vue} store
+ * @returns {ComponentOptions<Vue>}
+ */
+export default function createSlotReceiver(store: Vue): ComponentOptions<Vue> {
   return {
     name: 'SlotReceiver',
     render(h) {

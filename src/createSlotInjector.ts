@@ -1,14 +1,24 @@
-// currying
+import Vue, {ComponentOptions, VNodeData} from 'vue'
 
-export default function SlotInjector(store) {
-  return (WrappedComponent) => {
+
+/**
+ * createSlotInjector
+ *
+ * create hoc SlotInjector
+ *
+ * @export
+ * @param {Vue} store
+ * @returns {Function}
+ */
+export default function createSlotInjector(store: Vue): Function {
+  return (WrappedComponent: ComponentOptions<Vue>): ComponentOptions<Vue> => {
     return {
       props: WrappedComponent.props,
       render(h) {
 
         // distribute target slot
-        const slotFunctions = {}
-        for(let slotName in store.slotRoutes) {
+        const slotFunctions: VNodeData['scopedSlots'] = {}
+        for(let slotName in store.$data.slotRoutes) {
           if(store.$data.slotRoutes[slotName] === WrappedComponent.name && store.$data.slotFunctions[slotName] !== undefined) {
             slotFunctions[slotName] = store.$data.slotFunctions[slotName]
           }
