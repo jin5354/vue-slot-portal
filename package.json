@@ -1,6 +1,6 @@
 {
   "name": "vue-slot-portal",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Vue plugin for slot across-component distribution.",
   "main": "dist/index.js",
   "scripts": {
