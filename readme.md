@@ -1,5 +1,8 @@
 # vue-slot-portal
 
+![version](https://img.shields.io/npm/v/vue-slot-portal.svg)
+![mit](https://img.shields.io/npm/l/vue-slot-portal.svg)
+
 Vue plugin for across-component slot distribution.
 
 ![sample](https://user-images.githubusercontent.com/6868950/57189626-3a1d4700-6f43-11e9-930c-a52371fe0647.png)
