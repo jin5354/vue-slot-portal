@@ -1,5 +1,6 @@
 # vue-slot-portal
 
+[![Build Status](https://travis-ci.org/jin5354/vue-slot-portal.svg?branch=master)](https://travis-ci.org/jin5354/vue-slot-portal)
 ![version](https://img.shields.io/npm/v/vue-slot-portal.svg)
 ![mit](https://img.shields.io/npm/l/vue-slot-portal.svg)
 
